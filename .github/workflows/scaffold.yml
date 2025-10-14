@@ -6,11 +6,15 @@ on:
       service_name:
         required: true
         description: The name of the new service
-      #   type: string
-      # description:
-      #   required: false
-      #   description: Description of the service
-      #   type: string
+        type: string
+      boilerplate:
+        required: true
+        description: Boilerplate option for the service
+        type: string
+      code_owner:
+        required: true
+        description: Code owner team name
+        type: string
       port_context:
         required: true
         description: Includes the action's run id
