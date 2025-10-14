@@ -49,7 +49,11 @@ jobs:
           portRunId: ${{ fromJson(inputs.port_context).runId }}
           repositoryName: ${{ inputs.service_name }}
           portUserInputs: '{"cookiecutter_app_name": "${{ inputs.service_name }}" }'
-          cookiecutterTemplate: https://github.com/lacion/cookiecutter-golang
+          cookiecutterTemplate: 
+            ${{ boilerplate == 'Rest API Backend' && 'https://github.com/agconti/cookiecutter-django-rest.git' || 
+            boilerplate == 'React Client Side' && 'https://github.com/Buuntu/fastapi-react.git' || 
+            boilerplate == 'Python Data Stream' && 'https://github.com/drivendataorg/cookiecutter-data-science.git' || 
+            'Error retreiving cookie template' }}
           blueprintIdentifier: "githubRepository"
           organizationName: ${{ env.ORG_NAME }}
           createPortEntity: false
