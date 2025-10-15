@@ -51,9 +51,8 @@ jobs:
           portUserInputs: '{"cookiecutter_app_name": "${{ inputs.service_name }}" }'
           cookiecutterTemplate: 
             ${{ inputs.boilerplate == 'Rest API Backend' && 'https://github.com/agconti/cookiecutter-django-rest.git' || 
-            inputs.boilerplate == 'React Client Side' && 'https://github.com/Buuntu/fastapi-react.git' || 
-            inputs.boilerplate == 'Python Data Stream' && 'https://github.com/drivendataorg/cookiecutter-data-science.git' || 
-            'Error retreiving cookie template' }}
+            inputs.boilerplate == 'React Client Side' && 'https://github.com/Buuntu/fastapi-react.git' ||
+            'Boilerplate input mismatch' }}
           blueprintIdentifier: "githubRepository"
           organizationName: ${{ env.ORG_NAME }}
           createPortEntity: false
