@@ -24,7 +24,7 @@ jobs:
   scaffold-service:
     runs-on: ubuntu-latest
     env:
-      ORG_NAME: itayalony
+      ORG_NAME: itayalony-org
       PORT_RUN_ID: ${{ fromJson(inputs.port_context).runId }}
 
     steps:
